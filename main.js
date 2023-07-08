@@ -35,7 +35,7 @@ window.onload = function () {
         const selectedType = types[Math.floor(Math.random() * types.length)];
         const text = grammar.flatten(`A ${selectedType}: #${selectedType}#`);
         const textContainer = document.getElementById('textContainer');
-        textContainer.textContent = text;
+        textContainer.textContent = `${text}\n`;
         console.log("Text: ", text);
     }
 
@@ -44,5 +44,7 @@ window.onload = function () {
     generateButton.addEventListener('click', generateText);
 
     // Generate initial text on page load
-    generateText();
+    for (let i = 0; i < 20; i++) {
+        generateText();
+    }
 };
