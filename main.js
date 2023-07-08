@@ -12,7 +12,7 @@ const grammar = tracery.createGrammar({
     //history
     history: ['In the age of #year#, #entity# #verb# #event#.', 'Remember when #entity# #verb# #event# in the time of #year#.', 'The annals of time recall #entity# and their #event# in the days of #year#.'],
     event: ['a spiritual awakening', 'the founding of an Order', 'a great revelation', 'the cosmic alignment'],
-    year: ['the Great Eclipse', 'the Harmonic Concordance', 'the Dreamer\'s Epiphany', 'the Sephiratic Renaissance'],
+    year: ['the Great Eclipse', 'the Harmonic Concordance', 'the Dreamer\'s Epiphany', 'the Piratic Renaissance'],
     verb: ['ushered in', 'led to', 'gave birth to', 'marked'],
     //myth
     myth: ['Once, #entity# journeyed to the #object#. #detail#. This is the tale of #concept#.', 'In ancient days, #entity# #verb# the #object#. #detail#. Thus began the era of #concept#.'],
