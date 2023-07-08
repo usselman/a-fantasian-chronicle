@@ -20,7 +20,7 @@ const grammar = tracery.createGrammar({
 function generateText() {
     const types = ['hymn', 'history', 'myth'];
     const selectedType = types[Math.floor(Math.random() * types.length)];
-    const text = grammar.flatten(`#${selectedType}#`);
+    const text = grammar.flatten(`A ${selectedType}: #${selectedType}#`);
     const textContainer = document.getElementById('textContainer');
     textContainer.textContent = text;
 }
