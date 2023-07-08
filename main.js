@@ -1,6 +1,4 @@
 // Create a Tracery grammar
-// var tracery = require('tracery-grammar');
-
 const grammar = tracery.createGrammar({
     //hymn
     hymn: ['#greeting#, #greeting#!', 'Sing #emotion#ly, #entity#!', 'Praise the #entity#!'],
