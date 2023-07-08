@@ -35,7 +35,7 @@ window.onload = function () {
         const selectedType = types[Math.floor(Math.random() * types.length)];
         const text = grammar.flatten(`A ${selectedType}: #${selectedType}#`);
         const textContainer = document.getElementById('textContainer');
-        textContainer.textContent = `${text}\n`;
+        textContainer.textContent = `${text}`;
         console.log("Text: ", text);
     }
 
