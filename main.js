@@ -25,6 +25,7 @@ window.onload = function () {
         const text = grammar.flatten(`A ${selectedType}: #${selectedType}#`);
         const textContainer = document.getElementById('textContainer');
         textContainer.textContent = text;
+        console.log("Text: ", text);
     }
 
     // Attach event listener to the generate button
