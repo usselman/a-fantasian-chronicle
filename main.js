@@ -39,7 +39,7 @@ function generateText() {
     const selectedType = types[Math.floor(Math.random() * types.length)];
     const text = grammar.flatten(`A ${selectedType}: #${selectedType}#`);
     const textContainer = document.getElementById('textContainer');
-    textContainer.textContent = text;
+    textContainer.textContent = text + '\n';
 }
 
 // Attach event listener to the generate button
@@ -47,4 +47,6 @@ const generateButton = document.getElementById('generateButton');
 generateButton.addEventListener('click', generateText);
 
 // Generate initial text on page load
-generateText();
+for (let i = 0; i < 10; i++) {
+    generateText();
+}
