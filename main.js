@@ -1,9 +1,5 @@
-// Attach event listener to the generate button
-const generateButton = document.getElementById('generateButton');
-
-// Wait for the Tracery library and the DOM to finish loading
+// Create a Tracery grammar
 window.onload = function () {
-    // Create a Tracery grammar
     const grammar = tracery.createGrammar({
         //hymn
         hymn: ['#greeting#, #greeting#!', 'Sing #emotion#ly, #entity#!', 'Praise the #entity#!'],
@@ -31,7 +27,8 @@ window.onload = function () {
         textContainer.textContent = text;
     }
 
-    // Add event listener to the generate button
+    // Attach event listener to the generate button
+    const generateButton = document.getElementById('generateButton');
     generateButton.addEventListener('click', generateText);
 
     // Generate initial text on page load
