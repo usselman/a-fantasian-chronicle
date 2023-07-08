@@ -24,11 +24,11 @@ const grammar = tracery.createGrammar({
     concept: ['enlightenment', 'harmony', 'watchfulness', 'completion', 'peacefulness', 'seeking', 'giving', 'unity', 'wisdom', 'balance'],
 
     //hadith
-    hadith: ['"Seek not only #concept#, but understand its source. To truly know the divine, one must comprehend both #concept# and #quality#."',
-        '"#concept.capitalize# is not static; it flows as a river, just as #quality# warms the heart and quenches the thirst of the soul."',
-        '"Time weaves its own tale, and #concept# whisper their secrets. Be a silent observer, and you shall hear the cosmic echoes."',
-        '"#concept.capitalize# is not an end, but a journey. Traverse the #object# and find the wholeness within."',
-        '"Seek not to wake the dreamer with force, but through harmonious vibrations. Be the #concept# in the cosmic discordance."'],
+    hadith: ['Seek not only #concept#, but understand its source. To truly know the divine, one must comprehend both #concept# and #quality#.',
+        '#concept.capitalize# is not static; it flows as a river, just as #quality# warms the heart and quenches the thirst of the soul.',
+        'Time weaves its own tale, and #concept# whisper their secrets. Be a silent observer, and you shall hear the cosmic echoes.',
+        '#concept.capitalize# is not an end, but a journey. Traverse the #object# and find the wholeness within.',
+        'Seek not to wake the dreamer with force, but through harmonious vibrations. Be the #concept# in the cosmic discordance.'],
     concept: ['light', 'balance', 'dreams', 'completion', 'harmony', 'seeking', 'generosity', 'unity', 'wisdom', 'balance'],
     quality: ['generosity', 'peacefulness', 'observation', 'journey', 'calming melody'],
 });
@@ -47,6 +47,5 @@ const generateButton = document.getElementById('generateButton');
 generateButton.addEventListener('click', generateText);
 
 // Generate initial text on page load
-for (let i = 0; i < 10; i++) {
-    generateText();
-}
+generateText();
+
