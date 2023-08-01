@@ -1,51 +1,5 @@
 // Create a Tracery grammar
-window.onload = function () {
-    // const grammar = tracery.createGrammar({
-    //     //hymn
-    //     hymn: ['Sing #emotion#ly, for #entity#! Praise be to #entity#, the #quality# #emotion# along the #path#!',
-    //         'In #entity#, we find our #blessing#. As the #entity# lights our way, we step forth into the realm of #concept#!',
-    //         'Praise the #entity#, the #quality# one! #entity#, who offers #blessing#, guides us towards the #emotion# of #concept#!',
-    //         '#greeting#, #greeting#, to the #entity#! For in the #entity#, we find the touch of #concept#, and therein lies our #blessing#! #theological.capitalize#',
-    //         '#entity# has revealed the #arcaneTerm#, and in its #mystery# we find the path to #concept#.'],
-    //     greeting: ['hosanna', 'blessed be', 'rejoice', 'in wisdom\'s wake', 'benedictus', 'gaudete', 'in sapientiae vigilia'],
-    //     emotion: ['joyful', 'exuberant', 'heavenly', 'harmonious'],
-    //     entity: ['Sanctus Elian', 'Sancta Alyra', 'Somniantem Silentem', 'Lucem Ducem', 'Harmoniam Aeternam', 'Unitatem Divinam', 'Serenitatem Cosmicam', 'Spiritus Excitantem', 'Equilibratus', 'Veritatis Quaerentem', 'St. Elian', 'St. Alyra', 'the Silent Dreamer', 'the Guiding Light', 'the Eternal Harmony', 'the Divine Unity', 'the Cosmic Serenity', 'the Awakening Spirit', 'the Balanced One', 'the Seeker of Truth'],
-    //     blessing: ['lux', 'harmonia', 'sapientia', 'consummatio', 'pax', 'ducatio', 'generositas', 'unitas', 'illuminatio', 'equilibrium', 'light', 'harmony', 'wisdom', 'completion', 'peace', 'guidance', 'generosity', 'unity', 'enlightenment', 'balance'],
-    //     path: ['Vigilia Aeonis', 'Divinum Itiner', 'Semitam Sephiraticam', 'Harmoniam Cosmicam', 'Itiner Somniatoris', 'Semitam Illuminatam', 'Voyage Unitatis', 'Aeon Watch', 'Path of the Divine', 'Sephiratic Path', 'Cosmic Harmony', 'Dreamer\'s Journey', 'Illuminated Path', 'Unity\'s Voyage'],
-    //     concept: ['illuminatio', 'harmonia', 'vigilantia', 'consummatio', 'tranquillitas', 'quaestio', 'donum', 'unitas', 'sapientia', 'equilibrium', 'enlightenment', 'harmony', 'watchfulness', 'completion', 'peacefulness', 'seeking', 'giving', 'unity', 'pain', 'longing', 'wisdom', 'balance', '#path#'],
-    //     lesson: ['#wisdom#', '#paradox#', '#journey#', '#theological.capitalize#'],
-    //     arcaneTerm: ['Arcanum Aeonis', 'Mysterium Divinum', 'Revelatio Cosmica', 'Visio Sapientiae', 'Harmonia Universalis', 'Equilibrium Aeternum'],
-    //     mystery: ['enigma', 'paradoxon', 'mysterium', 'aenigma', 'profound mystery', 'holy mystery'],
-    //     wisdom: ['In #concept#, we find our true selves', 'The essence of #concept# is the key to our inner peace', 'Through #concept#, we transcend earthly limitations', 'In the heart of #concept#, lies the seed of divine wisdom'],
-    //     paradox: ['To seek #concept# is to realize that we have already found it', 'In the silence of #concept#, we hear the universe\'s song', 'In the emptiness of #concept#, we find abundant fulfillment'],
-    //     journey: ['Our journey to #concept# is a #blessing# of the soul', 'The path to #concept# is a labyrinth of the spirit, but every turn brings us closer to our truth', 'The pursuit of #concept# is a pilgrimage of the heart', 'Our voyage to #concept# is the greatest adventure of the spirit'],
-    //     //history
-    //     history: ['In the age of #year#, #entity# #verb# #event#. Their influence spread across the land, changing the course of our understanding of #concept#. #myth.capitalize#. #theological.capitalize#. #hadith.capitalize#. #hymn.capitalize#',
-    //         'Remember when #entity# #verb# #event# in the time of #year#. This marked a time of great #blessing#, bringing us closer to the #concept#. #myth.capitalize#. #theological.capitalize#. #hadith.capitalize#. #hymn.capitalize#',
-    //         'The annals of time recall #entity# and their #event# in the days of #year#. It was an era of #concept#, and the teachings of #entity# became our #blessing#. #myth.capitalize#. #theological.capitalize#. #hadith.capitalize#. #hymn.capitalize#'],
-    //     event: ['a spiritual awakening', 'the founding of an Order', 'a great revelation', 'the cosmic alignment'],
-    //     year: ['the Great Eclipse', 'the Harmonic Concordance', 'the Dreamer\'s Epiphany', 'the Sephiratic Renaissance'],
-    //     verb: ['ushered in', 'led to', 'gave birth to', 'marked'],
-    //     //myth
-    //     myth: ['Once, #entity# journeyed to the #object#. #detail#. Through their trials, they discovered the essence of #concept#. #theological.capitalize#',
-    //         'In ancient days, #entity# #verb# the #object#. #detail#. Their actions rippled through time, shaping the essence of #concept#. Thus began the era of their influence.'],
-    //     object: ['Aeon Watch', 'Divine Completion', 'Sephiratic path', 'Cosmic Harmony', 'Dreamer\'s Wake', 'Illuminated Path', 'Assembly of Giving'],
-    //     verb: ['discovered', 'relished', 'devoured', 'obscured', 'mastered', 'traversed', 'founded', 'embraced', 'revealed', 'established'],
-    //     detail: ['Their journey became our path', '#theological#', 'Their wisdom became our guide', 'Their revelation illuminated our world', 'Their harmony became our melody'],
-    //     concept: ['enlightenment', 'harmony', 'watchfulness', 'completion', 'peacefulness', 'seeking', 'giving', 'unity', 'wisdom', 'balance'],
-    //     //hadith
-    //     hadith: ['"Seek not only #concept#, but understand its source. To truly know the divine, one must comprehend both #concept# and #quality#. It is in this duality that we discover the unity of the #entity#."',
-    //         '"#concept.capitalize# is not static; it flows as a river, just as #quality# warms the heart and quenches the thirst of the soul. This ebb and flow is the rhythm of existence, the dance of life and the divine."',
-    //         '"Time weaves its own tale, and #concept# whisper their secrets. Be a silent observer, and you shall hear the cosmic echoes. In the silence, in the spaces between, there you will find the essence of #concept#."',
-    //         '"#concept.capitalize# is not an end, but a journey. Traverse the #object# and find the wisdom of #entity#. The path is long, the journey arduous, but every step brings you closer to the heart of #concept#."',
-    //         '"Seek not to wake the dreamer with force, but through harmonious vibrations. Be the #concept# in the cosmic discordance. Move in rhythm with the universe, and you will find the divine in the dance of #concept#."'],
-    //     concept: ['light', 'balance', 'dreams', 'completion', 'harmony', 'seeking', 'generosity', 'unity', 'wisdom', 'balance'],
-    //     quality: ['generosity', 'peacefulness', 'observation', 'journey', 'calming melody'],
-    //     theological: ['In the realm of #entity#, there exists a #concept#. It resonates with the #ancientTerm#, bringing forth the divine essence of #concept#.',
-    //         '#entity.capitalize# beholds the #concept#, an echo of the divine #ancientTerm#. In this revelation, we find our path to #concept#.',
-    //         'Let us dwell in the #concept# of #entity#, a realm where the divine #ancientTerm# resonates with the harmonious dance of #concept#.'],
-    //     ancientTerm: ['Aletheia', 'Sophia', 'Agape', 'Eudaimonia', 'Anamnesis', 'Mysterium Magnum', 'Pleroma', 'Emanatio', 'Shekinah', 'Tiferet'],
-    // });
+document.addEventListener('DOMContentLoaded', function () {
     const grammar = tracery.createGrammar({
         history: ['#template1#', '#template2#', '#template3#', 'In the age of #year#, #entity# #verb# #event#. #event.capitalize# was #concept.a#, changing the course of our understanding of #concept#.',
             'Remember when #entity# #verb# #event# in the time of #year#. This marked a time of great #blessing#, bringing us closer to the #concept#.',
@@ -55,7 +9,7 @@ window.onload = function () {
         template3: ['#hero.capitalize# #verb# #object#. The #group# at #place# became #concept#. And #hero# said #quote#'],
         event: ['a spiritual awakening', 'the founding of an Order', 'a great revelation', 'the cosmic alignment'],
         year: ['the Great Eclipse', 'the Harmonic Concordance', 'the Dreamer\'s Epiphany', 'the Sephiratic Renaissance'],
-        verb: ['ushered in', 'led to', 'gave birth to', 'marked', 'enveloped', 'became', 'opened', 'revealed', 'brought', 'developed', 'enumerated', 'manifested', 'innervated', 'projected'],
+        verb: ['ushered in', 'seek', 'eliminate', 'desecrate', 'give praise', 'led to', 'gave birth to', 'marked', 'enveloped', 'became', 'opened', 'revealed', 'brought', 'developed', 'enumerated', 'manifested', 'innervated', 'projected'],
         hero: ['Sanctus Elian', 'Sancta Alyra', 'Somniantem Silentem', 'Lucem Ducem', 'Harmoniam Aeternam', 'Unitatem Divinam', 'Serenitatem Cosmicam', 'Spiritus Excitantem', 'Equilibratus', 'Veritatis Quaerentem', 'St. Elian', 'St. Alyra', 'the Silent Dreamer', 'the Guiding Light', 'the Eternal Harmony', 'the Divine Unity', 'the Cosmic Serenity', 'the Awakening Spirit', 'the Balanced One', 'the Seeker of Truth'],
         group: ['the Order of the Dreamer', 'the Order of the Light', 'the Order of the Harmony', 'the Order of the Unity', 'the Order of the Serenity', 'the Order of the Spirit', 'the Order of the Balance', 'the Order of the Truth'],
         place: ['the Temple of the Dreamer', 'the Palace of the Light', 'the Harmonic Village', 'the Temple of the Unity', 'Mt. Serenity', 'the Temple of the Spirit', 'the Balance', 'The Library of Truth'],
@@ -83,7 +37,6 @@ window.onload = function () {
         //history
         event: ['a spiritual awakening', 'the founding of an Order', 'a great revelation', 'the cosmic alignment', 'the #year#'],
         year: ['the Great Eclipse', 'the Harmonic Concordance', 'the Dreamer\'s Epiphany', 'the Sephiratic Renaissance'],
-        verb: ['ushered in', 'led to', 'gave birth to', 'marked'],
         //myth
         myth: ['Once, #entity#, filled with #concept#, #verb# to #hero# that the #detail#. #object.capitalize# was #concept#, the essence of #concept#, #greeting#. #theological.capitalize#',
             'In #year.capitalize#, #entity# #verb# the #object#. #detail#. Their #concept# #verb# across #object#, #verb# the #object# of #concept#. And so began the year of #year#.'],
@@ -92,7 +45,7 @@ window.onload = function () {
         detail: ['Their journey became our path', '#theological#', 'Their wisdom became our guide', 'Their revelation illuminated our world', 'Their harmony became our melody'],
         concept: ['enlightenment', 'harmony', 'watchfulness', 'completion', 'peacefulness', 'seeking', 'giving', 'unity', 'wisdom', 'balance'],
         //hadith
-        hadith: ['"Seek not only #concept#, but understand its source. To truly know the divine, one must comprehend both #concept# and #quality#. It is in this #concept# that we discover the #object# of the #entity#."',
+        hadith: ['"Seek not only #concept#, but understand its source. To truly #verb# the divine, one must comprehend both #concept# and #quality#. It is in this #concept# that we discover the #object# of the #entity#."',
             '"#concept.capitalize# is not #concept#; it flows as a river, just as #quality# warms the heart and #verb# the #concept# of the soul. This ebb and flow is the rhythm of existence, the dance of life and the divine."',
             '"Time weaves its own tale, and #concept# whisper their secrets. Be a silent observer, and you shall hear the cosmic echoes. In the silence, in the spaces between, there you will find the essence of #concept#."',
             '"#concept.capitalize# is not an end, but a journey. Traverse the #object# and find the wisdom of #entity#. The path is long, the journey arduous, but every step brings you closer to the heart of #concept#."',
@@ -106,6 +59,7 @@ window.onload = function () {
     });
 
     // Generate a new text based on the selected type and display it in the text container
+
     function generateText() {
         const types = ['history', 'hymn', 'hadith', 'myth', 'theological'];
         let selectedType = types[Math.floor(Math.random() * types.length)];
@@ -115,9 +69,13 @@ window.onload = function () {
         p.textContent = `${text}`;
         return p;
     }
+    function getRandomInt(max) {
+        return Math.ceil(Math.random() * max);
+    }
 
     // Attach event listener to the generate button
     const generateButton = document.getElementById('generateButton');
+    let numEntries = getRandomInt(3);
     generateButton.addEventListener('click', function () {
         const textContainer = document.getElementById('textContainer');
         // Clear out the old text
@@ -125,11 +83,13 @@ window.onload = function () {
             textContainer.firstChild.remove();
         }
         // Generate and display 20 new texts
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 1; i++) {
             textContainer.appendChild(generateText());
         }
     });
-
-    // Generate initial text on page load
     generateButton.click();
-};
+
+});
+
+// Generate initial text on page load
+generateButton.window.location.reload();
