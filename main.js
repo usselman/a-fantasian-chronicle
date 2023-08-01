@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         concept: ['light', 'balance', 'dreams', 'completion', 'harmony', 'seeking', 'generosity', 'unity', 'wisdom', 'balance'],
         quality: ['generosity', 'peacefulness', 'observation', 'journey', 'calming melody'],
         theological: ['In the realm of #entity#, there exists a #concept#. It resonates with the #ancientTerm#, bringing forth the divine essence of #concept#',
-            '#entity.capitalize# beholds the #concept#, an echo of the divine #ancientTerm#. In this revelation, we find our path to #concept#.',
+            '#entity.capitalize# beholds the #concept#, an echo of the divine #ancientTerm#. In this revelation, we find our path to #concept#, the holy #concept#.',
             'Let us dwell in the #concept# of #entity#, a realm where the divine #ancientTerm# resonates with the harmonious dance of #concept#.'],
         ancientTerm: ['Aletheia', 'Sophia', 'Agape', 'Eudaimonia', 'Anamnesis', 'Mysterium Magnum', 'Pleroma', 'Emanatio', 'Shekinah', 'Tiferet'],
     });
