@@ -63,11 +63,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function generateText() {
         const types = ['history', 'hymn', 'hadith', 'myth', 'theological'];
         let selectedType = types[Math.floor(Math.random() * types.length)];
-        selectedTypeAfter = selectedType === 'theological' ? 'theological treatise' : selectedType;
-        const text = grammar.flatten(`A ${selectedTypeAfter}: #${selectedType}#`);
+        const head = document.createElement('h2');
+        selectedTypeAfter = selectedType === 'theological' ? 'A theological treatise' : selectedType;
+        const text = grammar.flatten(`#${selectedType}#`);
         const p = document.createElement('p');
+        head.textContent = `${selectedTypeAfter.toUpperCase()}, pg ${getRandomInt(1000)}`;
         p.textContent = `${text}`;
-        return p;
+        return [head, p];
     }
     function getRandomInt(max) {
         return Math.ceil(Math.random() * max);
@@ -75,17 +77,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Attach event listener to the generate button
     const generateButton = document.getElementById('generateButton');
-    let numEntries = getRandomInt(3);
+    let numEntries = getRandomInt(2);
     generateButton.addEventListener('click', function () {
         const textContainer = document.getElementById('textContainer');
         // Clear out the old text
         while (textContainer.firstChild) {
             textContainer.firstChild.remove();
         }
-        // Generate and display 20 new texts
-        for (let i = 0; i < 1; i++) {
-            textContainer.appendChild(generateText());
-        }
+        // Generate and display new texts
+
+        let textElements = generateText();
+        textContainer.appendChild(textElements[0]);
+        textContainer.appendChild(textElements[1]);
+
     });
     generateButton.click();
 
