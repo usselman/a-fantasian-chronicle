@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Generate a new text based on the selected type and display it in the text container
 
     function generateText() {
+        console.log("This method has been called!");
         const types = ['history', 'hymn', 'hadith', 'myth', 'theological'];
         let selectedType = types[Math.floor(Math.random() * types.length)];
         const head = document.createElement('h2');
@@ -95,5 +96,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-// Generate initial text on page load
-generateButton.window.location.reload();
+// // Generate initial text on page load
+// generateButton.window.location.reload();
