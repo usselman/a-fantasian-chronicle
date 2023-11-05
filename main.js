@@ -10,10 +10,10 @@ window.onload = function () {
         template1: ['When #event#, #hero# #verb# #object#. The #group# at #place# came out to #hero# and #verb# #concept#. And #hero# said #quote#'],
         template2: ['In the year #year#, #hero# #verb# #object#. The #group# at #place# came out to #hero# and #verb# #concept#. And #hero# said #quote#'],
         template3: ['#hero.capitalize# #verb# #object#. The #group# at #place# became #concept#. And #hero# said #quote#'],
-        event: ['a spiritual awakening', 'the founding of an Order', 'a great revelation', 'the cosmic alignment'],
-        year: ['the Great Eclipse', 'the Harmonic Concordance', 'the Dreamer\'s Epiphany', 'the Sephiratic Renaissance'],
+        event: ['<span class="event">a spiritual awakening</span>', '<span class="event">the founding of an Order</span>', '<span class="event">a great revelation</span>', '<span class="event">the cosmic alignment</span>'],
+        year: ['<span class="event">the Great Eclipse</span>', '<span class="event">the Harmonic Concordance</span>', '<span class="event">the Dreamer\'s Epiphany</span>', '<span class="event">the Sephiratic Renaissance</span>'],
         verb: ['ushered in', 'seek', 'eliminate', 'desecrate', 'give praise', 'led to', 'gave birth to', 'marked', 'enveloped', 'became', 'opened', 'revealed', 'brought', 'developed', 'enumerated', 'manifested', 'innervated', 'projected'],
-        hero: ['Sanctus Elian', 'Sancta Alyra', 'Somniantem Silentem', 'Lucem Ducem', 'Harmoniam Aeternam', 'Unitatem Divinam', 'Serenitatem Cosmicam', 'Spiritus Excitantem', 'Equilibratus', 'Veritatis Quaerentem', 'St. Elian', 'St. Alyra', 'the Silent Dreamer', 'the Guiding Light', 'the Eternal Harmony', 'the Divine Unity', 'the Cosmic Serenity', 'the Awakening Spirit', 'the Balanced One', 'the Seeker of Truth'],
+        hero: ['<span class="hero">Sanctus Elian</span>', '<span class="hero">Sancta Alyra</span>', '<span class="hero">Somniantem Silentem</span>', '<span class="hero">Lucem Ducem</span>', '<span class="hero">Harmoniam Aeternam</span>', '<span class="hero">Unitatem Divinam</span>', '<span class="hero">Serenitatem Cosmicam</span>', '<span class="hero">Spiritus Excitantem</span>', '<span class="hero">Equilibratus</span>', '<span class="hero">Veritatis Quaerentem</span>', '<span class="hero">St. Elian</span>', '<span class="hero">St. Alyra</span>', 'the Silent Dreamer', 'the Guiding Light', 'the Eternal Harmony', 'the Divine Unity', 'the Cosmic Serenity', 'the Awakening Spirit', 'the Balanced One', 'the Seeker of Truth'],
         group: ['the Order of the Dreamer', 'the Order of the Light', 'the Order of the Harmony', 'the Order of the Unity', 'the Order of the Serenity', 'the Order of the Spirit', 'the Order of the Balance', 'the Order of the Truth'],
         place: ['the Temple of the Dreamer', 'the Palace of the Light', 'the Harmonic Village', 'the Temple of the Unity', 'Mt. Serenity', 'the Temple of the Spirit', 'the Balance', 'The Library of Truth'],
         concept: ['the Dreamer', 'the Light', 'the Harmony', 'the Unity', 'the Serenity', 'the Spirit', 'the Balance', 'the Truth'],
@@ -72,7 +72,7 @@ window.onload = function () {
         const text = grammar.flatten(`#${selectedType}#`);
         const p = document.createElement('p');
         head.textContent = `${selectedTypeAfter.toUpperCase()}, pg ${getRandomInt(1000)}`;
-        p.textContent = `${text}`;
+        p.innerHTML = `${text}`; // Changed from p.textContent
         return [head, p];
     }
     function getRandomInt(max) {
