@@ -1,5 +1,8 @@
-// Create a Tracery grammar
-document.addEventListener('DOMContentLoaded', function () {
+// var tracery = require('tracery-grammar');
+
+window.onload = function () {
+    console.log(tracery);
+    console.log("DOM fully loaded and parsed");
     const grammar = tracery.createGrammar({
         history: ['#template1#', '#template2#', '#template3#', 'In the age of #year#, #entity# #verb# #event#. #event.capitalize# was #concept.a#, changing the course of our understanding of #concept#.',
             'Remember when #entity# #verb# #event# in the time of #year#. This marked a time of great #blessing#, bringing us closer to the #concept#.',
@@ -65,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const types = ['history', 'hymn', 'hadith', 'myth', 'theological'];
         let selectedType = types[Math.floor(Math.random() * types.length)];
         const head = document.createElement('h2');
-        selectedTypeAfter = selectedType === 'theological' ? 'A theological treatise' : selectedType;
+        let selectedTypeAfter = selectedType === 'theological' ? 'A theological treatise' : selectedType;
         const text = grammar.flatten(`#${selectedType}#`);
         const p = document.createElement('p');
         head.textContent = `${selectedTypeAfter.toUpperCase()}, pg ${getRandomInt(1000)}`;
@@ -76,25 +79,26 @@ document.addEventListener('DOMContentLoaded', function () {
         return Math.ceil(Math.random() * max);
     }
 
-    // Attach event listener to the generate button
-    const generateButton = document.getElementById('generateButton');
-    let numEntries = getRandomInt(2);
-    generateButton.addEventListener('click', function () {
+    function refreshText() {
         const textContainer = document.getElementById('textContainer');
         // Clear out the old text
         while (textContainer.firstChild) {
-            textContainer.firstChild.remove();
+            textContainer.removeChild(textContainer.firstChild);
         }
         // Generate and display new texts
-
         let textElements = generateText();
         textContainer.appendChild(textElements[0]);
         textContainer.appendChild(textElements[1]);
+    }
 
-    });
+    // Attach event listener to the generate button
+    let numEntries = getRandomInt(2);
+    const generateButton = document.getElementById('generateButton');
+    generateButton.addEventListener('click', refreshText);
     generateButton.click();
 
-});
+    refreshText();
+};
 
 // // Generate initial text on page load
 // generateButton.window.location.reload();

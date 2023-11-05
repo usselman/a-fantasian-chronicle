@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "tracery": "^1.0.3",
     "tracery-grammar": "^2.7.4"
   }
 }
