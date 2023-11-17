@@ -1,28 +1,59 @@
+let numEntries = getRandomInt(1);
+
 const grammar = tracery.createGrammar({
-    history: ['#template1#', '#template2#', '#template3#', 'In the age of #year#, #entity# #verb# #event#. #event.capitalize# was #concept.a#, changing the course of our understanding of #concept#.',
-        'Remember when #entity# #verb# #event# in the time of #year#. This marked a time of great #blessing#, bringing us closer to the #concept#.',
-        'The annals of time recall #entity# and their #event# in the days of #year#. It was an era of #concept#, and the teachings of #entity# became our #blessing#.'],
-    template1: ['When #event#, #hero# #verb# #object#. The #group# at #place# came out to #hero# and #verb# #concept#. And #hero# said #quote#'],
-    template2: ['In the year #year#, #hero# #verb# #object#. The #group# at #place# came out to #hero# and #verb# #concept#. And #hero# said #quote#'],
-    template3: ['#hero.capitalize# #verb# #object#. The #group# at #place# became #concept#. And #hero# said #quote#'],
-    event: ['<span class="event">a spiritual awakening</span>', '<span class="event">the founding of an Order</span>', '<span class="event">a great revelation</span>', '<span class="event">the cosmic alignment</span>'],
-    year: ['<span class="event">the Great Eclipse</span>', '<span class="event">the Harmonic Concordance</span>', '<span class="event">the Dreamer\'s Epiphany</span>', '<span class="event">the Sephiratic Renaissance</span>'],
-    verb: ['ushered in', 'seek', 'eliminate', 'desecrate', 'give praise', 'led to', 'gave birth to', 'marked', 'enveloped', 'became', 'opened', 'revealed', 'brought', 'developed', 'enumerated', 'manifested', 'innervated', 'projected'],
-    hero: ['<span class="hero">Sanctus Elian</span>', '<span class="hero">Sancta Alyra</span>', '<span class="hero">Somniantem Silentem</span>', '<span class="hero">Lucem Ducem</span>', '<span class="hero">Harmoniam Aeternam</span>', '<span class="hero">Unitatem Divinam</span>', '<span class="hero">Serenitatem Cosmicam</span>', '<span class="hero">Spiritus Excitantem</span>', '<span class="hero">Equilibratus</span>', '<span class="hero">Veritatis Quaerentem</span>', '<span class="hero">St. Elian</span>', '<span class="hero">St. Alyra</span>', 'the Silent Dreamer', 'the Guiding Light', 'the Eternal Harmony', 'the Divine Unity', 'the Cosmic Serenity', 'the Awakening Spirit', 'the Balanced One', 'the Seeker of Truth'],
-    group: ['the Order of the Dreamer', 'the Order of the Light', 'the Order of the Harmony', 'the Order of the Unity', 'the Order of the Serenity', 'the Order of the Spirit', 'the Order of the Balance', 'the Order of the Truth'],
-    place: ['the Temple of the Dreamer', 'the Palace of the Light', 'the Harmonic Village', 'the Temple of the Unity', 'Mt. Serenity', 'the Temple of the Spirit', 'the Balance', 'The Library of Truth'],
-    concept: ['the Dreamer', 'the Light', 'the Harmony', 'the Unity', 'the Serenity', 'the Spirit', 'the Balance', 'the Truth'],
-    quote: ['"The #concept# is the #event# of the #group#."'],
-    object: ['the Aeon Watch', 'the Divine Completion', 'the Sephiratic Path', 'the Cosmic Harmony', 'the Dreamer\'s Wake', 'the Illuminated Path', 'the Assembly of Giving'],
-    hymn: ['Sing with #emotion#, for #entity#! Praise be to #entity#, the #quality# #emotion# #verb# the #path#!',
-        'In #entity#, we #verb# our #blessing#. As the #entity# #verb# our way, we #verb# #concept# into the realm of #concept#!',
-        'We #verb# #greeting# to the #entity#, for #entity# is the #emotion# of the #arcaneTerm#!',
-        'Praise the #entity#, the #quality# one! #entity#, who offers #blessing#, #verb# us towards the #emotion# of #concept#!',
-        '#greeting.capitalize#, #greeting#, to the #entity#! For in the #entity#, we find the touch of #concept#, and therein lies our #blessing#! #theological.capitalize#',
-        '#entity.capitalize# has revealed the #arcaneTerm#, and in its #mystery# we find the #lesson#.'],
-    greeting: ['hosanna', 'blessed be', 'rejoice', 'in wisdom\'s wake', 'benedictus', 'gaudete', 'in sapientiae vigilia'],
-    emotion: ['joyful', 'exuberant', 'heavenly', 'harmonious'],
-    entity: ['Sanctus Elian', 'Sancta Alyra', 'Somniantem', 'Silentem', 'Lucem the Great', 'Harmoniam', 'Unitatem', 'Serenitatem', 'Spiritus Excitantem', 'Equilibratus', 'Veritatis', 'Quaerentem', 'St. Elian', 'St. Alyra', 'the Silent Dreamer', 'the Guiding Light', 'the Eternal Harmony', 'the Divine Unity', 'the Cosmic Serenity', 'the Awakening Spirit', 'the Balanced One', 'the Seeker of Truth'],
+    history: [
+        'In the era of #year#, #entity# #verb# #event#. This #event.capitalize# was a beacon of #concept#, altering the threads of fate and belief. #template1#.',
+        'Recall the epoch when #entity# #verb# #event# under the veil of #year#. It heralded an age of #blessing#, drawing souls closer to the enigma of #concept#. #template2#',
+        'Chronicles speak of #entity#, their deeds in #event# during #year#. It was a time suffused with #concept#, where the wisdom of #entity# became our guiding #blessing#. #template3#'
+    ],
+    template1: [
+        'Amidst #event#, #hero# #verb# #object#. The #group# at #place# witnessed #hero#s deeds and echoed their call to #concept#.And thus, #hero# proclaimed: #quote#'
+    ],
+    template2: [
+        'In the year #year#, #hero# #verb# #object#. The #group# at #place#, drawn by #hero#s charisma, embraced the essence of #concept#.#hero# then spoke thus: #quote#'
+    ],
+    template3: [
+        'As #hero.capitalize# #verb# #object#, so did the #group# at #place# transform into #concept#. In their words: #quote#'
+    ],
+    event: [
+        'the Binding of the Seraphim', 'the Oracle’s Decree', 'the Shattering of the Veil', 'the Alignment of the Celestial Spheres'
+    ],
+    year: [
+        'the Epoch of Whispered Prophecies', 'the Dawn of the Crimson Moon', 'the Age of the Enlightened Seer', 'the Time of the Astral Awakening'
+    ],
+    verb: [
+        'foretold', 'unearthed', 'transcended', 'consecrated', 'bestowed grace upon', 'unveiled', 'conjured', 'awakened', 'illuminated', 'transformed'
+    ],
+    hero: [
+        'Elijah the Prophet', 'Alyra the Mystic', 'The Silent Pilgrim', 'Lucius the Lightbringer', 'Harmonius the Ageless', 'Unity’s Herald', 'Seraphina the Star-eyed', 'The Spirit Awakener', 'Ephraim the Balanced', 'The Truth Seeker'
+    ],
+    group: [
+        'the Brotherhood of the Sacred Light', 'the Order of Divine Harmony', 'the Keepers of the Astral Seal', 'the Guardians of the Eternal Flame', 'the Fellowship of the Celestial Path', 'the Disciples of the Hidden Truth'
+    ],
+    place: [
+        'the Sanctuary of Forgotten Whispers', 'the Luminous Citadel', 'the Grove of Cosmic Revelation', 'the Halls of Eternal Balance', 'Mount Seraphim', 'the Crystal Chamber of Insight'
+    ],
+    concept: [
+        'ethereal wisdom', 'divine harmony', 'cosmic enlightenment', 'the unity of souls', 'the serenity of the cosmos', 'the spirit’s awakening', 'the balance of the ages', 'the eternal truth'
+    ],
+    quote: [
+        '"In the heart of chaos lies the seed of serenity; in the shadow of doubt, the light of truth."'
+    ],
+    object: [
+        'the Codex of Celestial Mysteries', 'the Chalice of Endless Light', 'the Scroll of Ancient Wisdom', 'the Crystal of Harmonic Resonance', 'the Dreamer’s Lantern', 'the Tome of Astral Prophecies'
+    ],
+    hymn: [
+        'Chant with reverence for #entity#. Blessings upon #entity#, the bringer of #emotion# and the harbinger of #concept#.'
+    ],
+    greeting: [
+        'salutations of light', 'blessed be', 'rejoice in wisdom', 'sanctus', 'gloria in excelsis', 'peace be upon'
+    ],
+    emotion: [
+        'celestial joy', 'profound ecstasy', 'divine peace', 'harmonious serenity'
+    ],
+    entity: [
+        'Elijah the Enlightened', 'Alyra of the Veil', 'The Silent Pilgrim', 'Lucius, Bearer of Light', 'Harmonius, Keeper of the Ages', 'The Herald of Unity', 'Seraphina of the Stars', 'The Awakened Spirit', 'Ephraim the Equalizer', 'The Seeker'
+    ],
     blessing: ['lux', 'harmonia', 'sapientia', 'consummatio', 'pax', 'ducatio', 'generositas', 'unitas', 'illuminatio', 'equilibrium', 'light', 'harmony', 'wisdom', 'completion', 'peace', 'guidance', 'generosity', 'unity', 'enlightenment', 'balance'],
     path: ['Vigilia Aeonis', 'Divinum Itiner', 'Semitam Sephiraticam', 'Harmoniam Cosmicam', 'Itiner Somniatoris', 'Semitam Illuminatam', 'Voyage Unitatis', 'Aeon Watch', 'Path of the Divine', 'Sephiratic Path', 'Cosmic Harmony', 'Dreamer\'s Journey', 'Illuminated Path', 'Unity\'s Voyage'],
     concept: ['illuminatio', 'harmonia', 'vigilantia', 'consummatio', 'tranquillitas', 'quaestio', 'donum', 'unitas', 'sapientia', 'equilibrium', 'enlightenment', 'harmony', 'watchfulness', 'completion', 'peacefulness', 'seeking', 'giving', 'unity', 'pain', 'longing', 'wisdom', 'balance', '#path#'],
@@ -81,13 +112,14 @@ function refreshText() {
         textContainer.removeChild(textContainer.firstChild);
     }
     // Generate and display new texts
-    let textElements = generateText();
-    textContainer.appendChild(textElements[0]);
-    textContainer.appendChild(textElements[1]);
+    for (let i = 0; i < numEntries; i++) {
+        let textElements = generateText();
+        textContainer.appendChild(textElements[0]);
+        textContainer.appendChild(textElements[1]);
+    }
 }
 
-// Attach event listener to the generate button
-let numEntries = getRandomInt(2);
+
 const generateButton = document.getElementById('generateButton');
 generateButton.addEventListener('click', refreshText);
 generateButton.click();
