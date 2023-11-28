@@ -16,7 +16,7 @@ const grammar = tracery.createGrammar({
         'As #hero.capitalize# #verb# #object#, so did the #group# at #place# transform into #concept#. In their words: #quote#'
     ],
     event: [
-        'the Binding of the Seraphim', 'the Oracle’s Decree', 'the Shattering of the Veil', 'the Alignment of the Celestial Spheres'
+        'the Binding of the Seraphim', 'the Oracles Decree', 'the Shattering of the Veil', 'the Alignment of the Celestial Spheres'
     ],
     year: [
         'the Epoch of Whispered Prophecies', 'the Dawn of the Crimson Moon', 'the Age of the Enlightened Seer', 'the Time of the Astral Awakening'
@@ -25,7 +25,7 @@ const grammar = tracery.createGrammar({
         'foretold', 'unearthed', 'transcended', 'consecrated', 'bestowed grace upon', 'unveiled', 'conjured', 'awakened', 'illuminated', 'transformed'
     ],
     hero: [
-        'Elijah the Prophet', 'Alyra the Mystic', 'The Silent Pilgrim', 'Lucius the Lightbringer', 'Harmonius the Ageless', 'Unity’s Herald', 'Seraphina the Star-eyed', 'The Spirit Awakener', 'Ephraim the Balanced', 'The Truth Seeker'
+        'Elijah the Prophet', 'Alyra the Mystic', 'The Silent Pilgrim', 'Lucius the Lightbringer', 'Harmonius the Ageless', 'Unitys Herald', 'Seraphina the Star-eyed', 'The Spirit Awakener', 'Ephraim the Balanced', 'The Truth Seeker'
     ],
     group: [
         'the Brotherhood of the Sacred Light', 'the Order of Divine Harmony', 'the Keepers of the Astral Seal', 'the Guardians of the Eternal Flame', 'the Fellowship of the Celestial Path', 'the Disciples of the Hidden Truth'
@@ -34,13 +34,13 @@ const grammar = tracery.createGrammar({
         'the Sanctuary of Forgotten Whispers', 'the Luminous Citadel', 'the Grove of Cosmic Revelation', 'the Halls of Eternal Balance', 'Mount Seraphim', 'the Crystal Chamber of Insight'
     ],
     concept: [
-        'ethereal wisdom', 'divine harmony', 'cosmic enlightenment', 'the unity of souls', 'the serenity of the cosmos', 'the spirit’s awakening', 'the balance of the ages', 'the eternal truth'
+        'ethereal wisdom', 'divine harmony', 'cosmic enlightenment', 'the unity of souls', 'the serenity of the cosmos', 'the spirits awakening', 'the balance of the ages', 'the eternal truth'
     ],
     quote: [
         '"In the heart of chaos lies the seed of serenity; in the shadow of doubt, the light of truth."'
     ],
     object: [
-        'the Codex of Celestial Mysteries', 'the Chalice of Endless Light', 'the Scroll of Ancient Wisdom', 'the Crystal of Harmonic Resonance', 'the Dreamer’s Lantern', 'the Tome of Astral Prophecies'
+        'the Codex of Celestial Mysteries', 'the Chalice of Endless Light', 'the Scroll of Ancient Wisdom', 'the Crystal of Harmonic Resonance', 'the Dreamers Lantern', 'the Tome of Astral Prophecies'
     ],
     hymn: [
         'Chant with reverence for #entity#. Blessings upon #entity#, the bringer of #emotion# and the harbinger of #concept#.'
